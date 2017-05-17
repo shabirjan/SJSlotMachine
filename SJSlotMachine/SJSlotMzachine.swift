@@ -193,7 +193,7 @@ class SJSlotMachine: UIView {
         
         let slotIcons:[UIImage] = (self.dataSource?.iconsForSlots(in: self))!
         let iconCount = slotIcons.count
-        var completePositionArray = [Any]()
+        var completePositionArray = [Int]()
         CATransaction.begin()
         CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut))
         CATransaction.setDisableActions(true)
@@ -201,36 +201,36 @@ class SJSlotMachine: UIView {
             self.isSliding = false
             self.delegate?.slotMachineDidEndSliding(self)
             
-            for i in 0..<self._slotScrollLayerArray.count {
-                let slotScrollLayer:CALayer = self._slotScrollLayerArray[i]
-                slotScrollLayer.position = CGPoint(x: CGFloat(slotScrollLayer.position.x), y: CGFloat(CFloat((completePositionArray[i] as? NSNumber)!)))
-                
-                var toBeDeletedLayerArray = [CALayer]()
-                
-                let resultIndex = Int((self.slotResults[i]))
-                let currentIndex = Int((self._currentSlotResults[i]))
-                
-                for j in 0..<(iconCount * (self.kMinTurn + i) + resultIndex - currentIndex) {
-                    let iconLayer: CALayer = (slotScrollLayer.sublayers?[j])!
-                    toBeDeletedLayerArray.append(iconLayer)
-                }
-                for toBeDeletedLayer in toBeDeletedLayerArray {
-                    let toBeAddedLayer = CALayer()
-                    toBeAddedLayer.frame = toBeDeletedLayer.frame
-                    toBeAddedLayer.contents = toBeDeletedLayer.contents;
-                    toBeAddedLayer.contentsScale = toBeDeletedLayer.contentsScale;
-                    toBeAddedLayer.contentsGravity = toBeDeletedLayer.contentsGravity;
-                    
-                    let shiftY = CGFloat(iconCount) * toBeAddedLayer.frame.size.height * CGFloat((self.kMinTurn + i + 3))
-                    toBeAddedLayer.position = CGPoint(x: toBeAddedLayer.position.x, y: toBeAddedLayer.position.y - shiftY)
-                    
-                    toBeDeletedLayer.removeFromSuperlayer()
-                    slotScrollLayer.addSublayer(toBeAddedLayer)
-                }
-                toBeDeletedLayerArray = [CALayer]()
-            }
-            self._currentSlotResults = self.slotResults
-            completePositionArray = [Any]()
+//            for i in 0..<self._slotScrollLayerArray.count {
+//                let slotScrollLayer:CALayer = self._slotScrollLayerArray[i]
+//                slotScrollLayer.position = CGPoint(x: CGFloat(slotScrollLayer.position.x), y: CGFloat(CFloat((completePositionArray[i]))))
+//                
+//                var toBeDeletedLayerArray = [CALayer]()
+//                
+//                let resultIndex = Int((self.slotResults[i]))
+//                let currentIndex = Int((self._currentSlotResults[i]))
+//                
+//                for j in 0..<(iconCount * (self.kMinTurn + i) + resultIndex - currentIndex) {
+//                    let iconLayer: CALayer = (slotScrollLayer.sublayers?[j])!
+//                    toBeDeletedLayerArray.append(iconLayer)
+//                }
+//                for toBeDeletedLayer in toBeDeletedLayerArray {
+//                    let toBeAddedLayer = CALayer()
+//                    toBeAddedLayer.frame = toBeDeletedLayer.frame
+//                    toBeAddedLayer.contents = toBeDeletedLayer.contents;
+//                    toBeAddedLayer.contentsScale = toBeDeletedLayer.contentsScale;
+//                    toBeAddedLayer.contentsGravity = toBeDeletedLayer.contentsGravity;
+//                    
+//                    let shiftY = CGFloat(iconCount) * toBeAddedLayer.frame.size.height * CGFloat((self.kMinTurn + i + 3))
+//                    toBeAddedLayer.position = CGPoint(x: toBeAddedLayer.position.x, y: toBeAddedLayer.position.y - shiftY)
+//                    
+//                    toBeDeletedLayer.removeFromSuperlayer()
+//                    slotScrollLayer.addSublayer(toBeAddedLayer)
+//                }
+//                toBeDeletedLayerArray = [CALayer]()
+//            }
+//            self._currentSlotResults = self.slotResults
+//            completePositionArray = [Int]()
         }
         
         let keyPath: String = "position.y"
@@ -250,7 +250,7 @@ class SJSlotMachine: UIView {
             slideAnimation.isRemovedOnCompletion = false
             
             slotScrollLayer.add(slideAnimation, forKey: "slideAnimation")
-            completePositionArray.append(slideAnimation.toValue!)
+            completePositionArray.append(slideAnimation.toValue! as! Int)
         }
         
         
