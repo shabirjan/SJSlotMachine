@@ -12,7 +12,7 @@
 		9FFD2DE31ECCB5E900B92620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD2DE11ECCB5E900B92620 /* Main.storyboard */; };
 		9FFD2DE51ECCB5E900B92620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD2DE41ECCB5E900B92620 /* Assets.xcassets */; };
 		9FFD2DE81ECCB5E900B92620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFD2DE61ECCB5E900B92620 /* LaunchScreen.storyboard */; };
-		9FFD2DF01ECCB60D00B92620 /* SJSlotMzachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD2DEF1ECCB60D00B92620 /* SJSlotMzachine.swift */; };
+		9FFD2DF21ECCB83F00B92620 /* SJSlotMzachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD2DF11ECCB83F00B92620 /* SJSlotMzachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		9FFD2DE41ECCB5E900B92620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FFD2DE71ECCB5E900B92620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FFD2DE91ECCB5E900B92620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FFD2DEF1ECCB60D00B92620 /* SJSlotMzachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJSlotMzachine.swift; path = ../../ZCSlotMachineSwift/SJSlotMachine/SJSlotMzachine.swift; sourceTree = "<group>"; };
+		9FFD2DF11ECCB83F00B92620 /* SJSlotMzachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SJSlotMzachine.swift; path = ../../SJSlotMachine/SJSlotMzachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 		9FFD2DDC1ECCB5E900B92620 /* SJDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9FFD2DEF1ECCB60D00B92620 /* SJSlotMzachine.swift */,
+				9FFD2DF11ECCB83F00B92620 /* SJSlotMzachine.swift */,
 				9FFD2DDD1ECCB5E900B92620 /* AppDelegate.swift */,
 				9FFD2DDF1ECCB5E900B92620 /* ViewController.swift */,
 				9FFD2DE11ECCB5E900B92620 /* Main.storyboard */,
@@ -142,7 +142,7 @@
 			files = (
 				9FFD2DE01ECCB5E900B92620 /* ViewController.swift in Sources */,
 				9FFD2DDE1ECCB5E900B92620 /* AppDelegate.swift in Sources */,
-				9FFD2DF01ECCB60D00B92620 /* SJSlotMzachine.swift in Sources */,
+				9FFD2DF21ECCB83F00B92620 /* SJSlotMzachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +306,7 @@
 				9FFD2DEE1ECCB5E900B92620 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
